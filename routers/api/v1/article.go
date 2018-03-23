@@ -7,11 +7,11 @@ import (
     "github.com/astaxie/beego/validation"
     "github.com/Unknwon/com"
 
-    "github.com/EDDYCJY/go-gin-example/models"
-    "github.com/EDDYCJY/go-gin-example/pkg/e"
-    "github.com/EDDYCJY/go-gin-example/pkg/setting"
-    "github.com/EDDYCJY/go-gin-example/pkg/util"
-    "github.com/EDDYCJY/go-gin-example/pkg/logging"
+    "github.com/y1281010069/go-gin/models"
+    "github.com/y1281010069/go-gin/pkg/e"
+    "github.com/y1281010069/go-gin/pkg/setting"
+    "github.com/y1281010069/go-gin/pkg/util"
+    "github.com/y1281010069/go-gin/pkg/logging"
 )
 
 // @Summary 获取单个文章

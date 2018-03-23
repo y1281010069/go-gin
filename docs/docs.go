@@ -13,11 +13,11 @@ var doc = `{
     "info": {
         "description": "An example of gin",
         "title": "Golang Gin API",
-        "termsOfService": "https://github.com/EDDYCJY/go-gin-example",
+        "termsOfService": "https://github.com/y1281010069/go-gin",
         "contact": {},
         "license": {
             "name": "MIT",
-            "url": "https://github.com/EDDYCJY/go-gin-example/blob/master/LICENSE"
+            "url": "https://github.com/y1281010069/go-gin/blob/master/LICENSE"
         },
         "version": "1.0"
     },

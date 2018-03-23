@@ -7,17 +7,17 @@ import (
 
     "github.com/fvbock/endless"
 
-    "github.com/EDDYCJY/go-gin-example/routers"
-    "github.com/EDDYCJY/go-gin-example/pkg/setting"
+    "github.com/y1281010069/go-gin/routers"
+    "github.com/y1281010069/go-gin/pkg/setting"
 )
 
 // @title Golang Gin API
 // @version 1.0
 // @description An example of gin
-// @termsOfService https://github.com/EDDYCJY/go-gin-example
+// @termsOfService https://github.com/y1281010069/go-gin
 
 // @license.name MIT
-// @license.url https://github.com/EDDYCJY/go-gin-example/blob/master/LICENSE
+// @license.url https://github.com/y1281010069/go-gin/blob/master/LICENSE
 
 // @BasePath /v1
 func main() {
