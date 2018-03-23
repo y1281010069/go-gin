@@ -106,12 +106,12 @@ func GetArticles(c *gin.Context) {
 // @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
 // @Router /api/v1/articles [post]
 func AddArticle(c *gin.Context) {
-    tagId, _ := com.StrTo(c.Query("tag_id")).Int()
-    title := c.Query("title")
-    desc := c.Query("desc")
-    content := c.Query("content")
-    createdBy := c.Query("created_by")
-    state, _ := com.StrTo(c.DefaultQuery("state", "0")).Int()
+    tagId, _ := com.StrTo(c.PostForm("tag_id")).Int()
+    title := c.PostForm("title")
+    desc := c.PostForm("desc")
+    content := c.PostForm("content")
+    createdBy := c.PostForm("created_by")
+    state, _ := com.StrTo(c.DefaultPostForm("state", "0")).Int()
 
     valid := validation.Validation{}
     valid.Min(tagId, 1, "tag_id").Message("标签ID必须大于0")
@@ -165,15 +165,15 @@ func AddArticle(c *gin.Context) {
 func EditArticle(c *gin.Context) {
     valid := validation.Validation{}
 
-    id, _ := com.StrTo(c.Param("id")).Int()
-    tagId, _ := com.StrTo(c.Query("tag_id")).Int()
-    title := c.Query("title")
-    desc := c.Query("desc")
-    content := c.Query("content")
-    modifiedBy := c.Query("modified_by")
+    id, _ := com.StrTo(c.PostForm("id")).Int()
+    tagId, _ := com.StrTo(c.PostForm("tag_id")).Int()
+    title := c.PostForm("title")
+    desc := c.PostForm("desc")
+    content := c.PostForm("content")
+    modifiedBy := c.PostForm("modified_by")
 
     var state int = -1
-    if arg := c.Query("state"); arg != "" {
+    if arg := c.PostForm("state"); arg != "" {
         state, _ = com.StrTo(arg).Int()
         valid.Range(state, 0, 1, "state").Message("状态只允许0或1")
     }

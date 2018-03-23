@@ -19,7 +19,7 @@ import (
 // @license.name MIT
 // @license.url https://github.com/y1281010069/go-gin/blob/master/LICENSE
 
-// @BasePath /v1
+// @BasePath /
 func main() {
     endless.DefaultReadTimeOut = setting.ReadTimeout
     endless.DefaultWriteTimeOut = setting.WriteTimeout

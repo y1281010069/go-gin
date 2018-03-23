@@ -12,6 +12,13 @@ type user struct {
 	Password string `valid:"Required; MaxSize(50)"`
 }
 
+// @Summary 登录
+// @Description 用户登录接口
+// @Produce  json
+// @Param username query string true "用户名"
+// @Param password query string true "密码"
+// @Success 200 {string} json "{"code":200,"data":{"user_info":[{"id":1,"username":"test"}]},"msg":"ok"}"
+// @Router /api/v1/login [get]
 func Login(c *gin.Context) {
 	username := c.Query("username")
 	password := c.Query("password")

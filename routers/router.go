@@ -10,7 +10,7 @@ import (
     "github.com/y1281010069/go-gin/routers/api"
     "github.com/y1281010069/go-gin/routers/api/v1"
     "github.com/y1281010069/go-gin/pkg/setting"
-    "github.com/y1281010069/go-gin/middleware/jwt"
+    _ "github.com/y1281010069/go-gin/middleware/jwt"
 )
 
 func InitRouter() *gin.Engine {
@@ -31,7 +31,7 @@ func InitRouter() *gin.Engine {
     }
 
     apiv1 := r.Group("/api/v1")
-    apiv1.Use(jwt.JWT())
+    // apiv1.Use(jwt.JWT())
     {
         //获取标签列表
         apiv1.GET("/tags", v1.GetTags)
