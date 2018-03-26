@@ -5,6 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/y1281010069/go-gin/pkg/e"
 	"github.com/y1281010069/go-gin/models"
+	"github.com/pquerna/ffjson/ffjson"
+	"github.com/y1281010069/go-gin/pkg/logging"
 )
 
 type user struct {
@@ -25,6 +27,27 @@ func Login(c *gin.Context) {
 
 	maps := make(map[string]interface{})
 	data := make(map[string]interface{})
+
+	// json测试
+	// 初始化数据
+	input := make(map[string]interface{})
+	input["status"] = 200
+
+	// json格式化
+	inputJson, _ := ffjson.Marshal(input)
+
+	// 输出
+	logging.Info(200, inputJson)
+	// [200 [123 34 115 116 97 116 117 115 34 58 50 48 48 125]]
+	logging.Info(200, string(inputJson[:]))
+	// {"status":200}
+
+	// json解析
+	inputDecode := make(map[string]interface{})
+	ffjson.Unmarshal(inputJson[:], &inputDecode)
+	// 输出
+	logging.Info(200, inputDecode)
+	// map[status:200]
 
 	if username != "" {
 		maps["username"] = username
